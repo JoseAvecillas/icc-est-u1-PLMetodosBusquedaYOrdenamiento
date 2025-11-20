@@ -24,7 +24,7 @@ public class SortingMethods {
         for (int i = 0; i < people.length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < people.length; j++) {
-                if (people[j].getName().compareToIgnoreCase(people[minIndex].getName()) < 0) {
+                if (people[j].getName().compareToIgnoreCase(people[minIndex].getName()) > 0) {
                     minIndex = j;
                 }
             }

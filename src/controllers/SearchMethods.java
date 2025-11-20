@@ -10,7 +10,7 @@ public class SearchMethods {
         int alto = persons.length -1;
 
         while (bajo <= alto) {
-            int medio = bajo - (alto - bajo) / 2;
+            int medio = bajo + (alto - bajo) / 2;
             int mediobusq = persons[medio].getAge();
 
             if (mediobusq == age) {
@@ -29,7 +29,7 @@ public class SearchMethods {
         int derecha= persons.length -1 ;
 
         while (izquierda<= derecha) {
-            int medio = izquierda - (derecha - izquierda ) / 2;
+            int medio = izquierda + (derecha - izquierda ) / 2;
             int comparename = persons[medio].getName().compareTo(name);
             if (comparename == 0) {
                 return persons[medio];
@@ -41,4 +41,23 @@ public class SearchMethods {
         }
         return null;
     }
+
+    public boolean isSortedByAge(Person[] persons) {
+        for (int i = 0; i < persons.length - 1; i++) {
+            if (persons[i].getAge() > persons[i + 1].getAge()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+        public boolean isSortedByName(Person[] persons) {
+        for (int i = 0; i < persons.length - 1; i++) {
+            if (persons[i].getName().compareToIgnoreCase(persons[i + 1].getName()) > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
